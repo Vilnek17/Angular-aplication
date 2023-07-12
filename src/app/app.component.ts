@@ -17,26 +17,6 @@ function passwordStrengthValidator(control: FormControl): { [key: string]: boole
   }
 }
 
-// function passwordColorValidator(control: FormControl): { [key: string]: boolean } {
-//   const value: string = control.value;
-
-//   if (!value || value.trim() === '') {
-//     return { 'gray': true };
-//   } else if (value.length < 8) {
-//     return { 'red': true };
-//   } else if (control.errors && control.errors['lowStrength']) {
-//     return { 'red': true };
-//   } else if (control.errors && control.errors['mediumStrength']) {
-//     return { 'yellow': true };
-//   } else if (control.errors && control.errors['strongStrength']) {
-//     return { 'green': true };
-//   } else {
-//     return {};
-//   }
-// }
- 
-
-
 
 @Component({
   selector: 'app-root',
