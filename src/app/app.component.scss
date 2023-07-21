@@ -1,42 +1,49 @@
-.wrapper{
+.wrapper {
     min-height: 100vh;
     background-color: #2f393d;
     padding: 10px;
-}
-form{
+  }
+  
+  form {
     margin: 0 auto;
     max-width: 300px;
     display: flex;
     flex-direction: column;
-}
-.form-item{
+  }
+  
+  .form-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    p{
-        color: rgb(222, 100, 100);
-        font-weight: 600;
-        font-size: 18px;
+    p {
+      color: rgb(222, 100, 100);
+      font-weight: 600;
+      font-size: 18px;
     }
-    &.yellow{
-        input{
-                background-color: yellow;
+  
+    &.yellow {
+      input {
+        background-color: yellow;
+      }
     }
-}
-    &.red{
-    input{
-            background-color: red;
-        }
-}
-
-&.green{
-    input{
-            background-color: green;
-          }
-}
-&.gray{
-    input{
-            background-color:gray;
-         }
-}
-}
+  
+    &.red {
+      input {
+        background-color: red;
+      }
+    }
+  
+    &.green {
+      input {
+        background-color: green;
+      }
+    }
+  
+    &.gray {
+      input {
+        background-color: gray;
+      }
+    }
+  }
+  
+  

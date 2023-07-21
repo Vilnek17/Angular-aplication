@@ -1,38 +1,44 @@
 <div class="wrapper">
-    <form [formGroup]="form">
-        <div class="form-item">
-            <label for="password">Password</label>
-            <input id="password" placeholder="Please enter password" formControlName="password">
-            <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
-              <p *ngIf="form.get('password')?.errors?.['strongStrength']">Password is strong</p>
-              <p *ngIf="form.get('password')?.errors?.['lowStrength']">The password is easy</p>
-              <p *ngIf="form.get('password')?.errors?.['mediumStrength']">The password is medium</p>
-            </div>
-          </div>
-        <div class="form-item" [ngClass]="{
-          'gray': isSectionEmpty() ,
-          'red': !isSectionEmpty() && !isPasswordMediumStrength() && isPasswordLengthInvalid() || isPasswordEasyStrength() ,
-          'yellow': isPasswordMediumStrength(),
-          'green': isPasswordStrongStrength()
-        }">
-            <input  placeholder="First section" formControlName="firstSection">
-        </div>
-        <div class="form-item" [ngClass]="{
-        'gray': isSectionEmpty()|| !isPasswordLengthInvalid()&& isPasswordEasyStrength(),
-        'red':  !isSectionEmpty() && isPasswordLengthInvalid() && !isPasswordMediumStrength()  ,
-        'yellow': isPasswordMediumStrength() && !isSectionEmpty(),
-        'green': isPasswordStrongStrength()
-        }">
-            <input  placeholder="Second section" formControlName="secondSection">
-        </div>
-        <div class="form-item" [ngClass]="{
-        'gray': isSectionEmpty()|| !isPasswordLengthInvalid() && isPasswordEasyStrength() || isPasswordMediumStrength(),
-        'red': !isSectionEmpty() && isPasswordLengthInvalid() && !isPasswordMediumStrength(),
-        'yellow': !isPasswordMediumStrength() && !isPasswordStrongStrength(),
-        'green': isPasswordStrongStrength()
-        }">
-          <input  placeholder="Third section" formControlName="thirdSection">
+  <form [formGroup]="form">
+    <!-- Password Block -->
+    <div class="form-item">
+      <label for="password">Password</label>
+      <input id="password" placeholder="Please enter password" formControlName="password">
+      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        <p *ngIf="form.get('password')?.errors?.['strongStrength']">Password is strong</p>
+        <p *ngIf="form.get('password')?.errors?.['lowStrength']">The password is easy</p>
+        <p *ngIf="form.get('password')?.errors?.['mediumStrength']">The password is medium</p>
       </div>
-    </form>
-  </div>
-  
+    </div>
+
+    <!-- First Section Block -->
+    <div class="form-item" [ngClass]="{
+      'gray': isSectionEmpty(),
+      'red': !isSectionEmpty() && !isPasswordMediumStrength() && isPasswordLengthInvalid() || isPasswordEasyStrength(),
+      'yellow': isPasswordMediumStrength(),
+      'green': isPasswordStrongStrength()
+    }">
+      <input appCustomInput placeholder="First section" formControlName="firstSection">
+    </div>
+
+    <!-- Second Section Block -->
+    <div class="form-item" [ngClass]="{
+      'gray': isSectionEmpty() || !isPasswordLengthInvalid() && isPasswordEasyStrength(),
+      'red': !isSectionEmpty() && isPasswordLengthInvalid() && !isPasswordMediumStrength(),
+      'yellow': isPasswordMediumStrength() && !isSectionEmpty(),
+      'green': isPasswordStrongStrength()
+    }">
+      <input appCustomInput placeholder="Second section" formControlName="secondSection">
+    </div>
+
+    <!-- Third Section Block -->
+    <div class="form-item" [ngClass]="{
+      'gray': isSectionEmpty() || !isPasswordLengthInvalid() && isPasswordEasyStrength() || isPasswordMediumStrength(),
+      'red': !isSectionEmpty() && isPasswordLengthInvalid() && !isPasswordMediumStrength(),
+      'yellow': !isPasswordMediumStrength() && !isPasswordStrongStrength(),
+      'green': isPasswordStrongStrength()
+    }">
+      <input appCustomInput placeholder="Third section" formControlName="thirdSection">
+    </div>
+  </form>
+</div>
